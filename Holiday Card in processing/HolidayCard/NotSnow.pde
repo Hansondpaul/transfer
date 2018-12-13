@@ -19,7 +19,7 @@ public class Snow{
     drawFlake(255);
     if(x==0) snow.editSpeed(0.5);
     if(x==2000) snow.editSpeed(-0.5);
-    y+=1;
+    y+=2.5;
     x+=snow.getSpeed();
     
     
