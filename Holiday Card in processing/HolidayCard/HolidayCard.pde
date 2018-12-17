@@ -43,3 +43,7 @@ public void drawGround(){
   noStroke();
   rect(0,900,1000,100);
 }
+public void keyPressed(){
+  if (key == 'p')
+    gcolor.setCover(0);
+}
