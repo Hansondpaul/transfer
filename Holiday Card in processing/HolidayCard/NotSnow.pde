@@ -34,6 +34,6 @@ public class Snow{
       x=(int)random(0,1000);
       snow.setSpeed((int)random(-2,2));
     }//if
-  }//movesnow
+  }//movesnow  }
   
 }
