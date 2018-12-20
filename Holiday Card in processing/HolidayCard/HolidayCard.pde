@@ -1,13 +1,7 @@
-Snow[] storm = new Snow[2000];
-Bulbs[] dec = new Bulbs[4] = {new Bulbs(480,585,2), new Bulbs(505,550,1), new Bulbs(505,600,3), new Bulbs(440,680,3)};
+Snow[] storm = new Snow[1500];
+Bulbs[] dec = {new Bulbs(480,585,2), new Bulbs(505,550,1), new Bulbs(505,600,3), new Bulbs(440,680,3), new Bulbs(480,650,1), new Bulbs(520,640,2)};
 SnowCover gcolor = new SnowCover();
 Bulbs ltest;
-Bulbs l2;
-Bulbs l3;
-Bulbs l4;
-Bulbs
-Tree test2;
-Tree test3;
 Tree test;
 int i;
 
@@ -19,12 +13,10 @@ void setup()
   frameRate(120);
   
   test = new Tree(500,850);
-  
   //snowflake assingnment
   for(int i = 0; i < storm.length; i++)
     {
-      storm[i] = new Snow( (int)random(0
-      ,1000), (int)random(-5000,0))
+      storm[i] = new Snow( (int)random(0,1000), (int)random(-5000,0));
     }
 }
 //////////////////////////////////////////////////////
@@ -48,7 +40,7 @@ after this is just methods that are used to clean up the above code
 public void drawBulbs()//draws the bulb objects
 {
   for(int i = 0; i < dec.length; i++){
-    dec[i].drawBulb;
+    dec[i].drawBulb();
   }
 }
 //////////////////////////////////////////////////////
