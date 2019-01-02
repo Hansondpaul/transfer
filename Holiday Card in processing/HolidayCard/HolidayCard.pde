@@ -1,10 +1,13 @@
 Snow[] storm = new Snow[1500];
-Bulbs[] dec = {new Bulbs(480,585,2), new Bulbs(505,550,1), new Bulbs(505,600,3), new Bulbs(440,680,3), new Bulbs(480,650,1), new Bulbs(520,640,2)};
+Bulbs[] dec = {new Bulbs(480,585,2), new Bulbs(505,550,1), new Bulbs(505,600,3), new Bulbs(440,680,3), new Bulbs(480,650,1), new Bulbs(520,640,2),
+new Bulbs(512, 678, 3), new Bulbs(475,695,2), new Bulbs(557,684,1), new Bulbs(538,716,2), new Bulbs(446,731,1), new Bulbs(495,741,3), new Bulbs(565,747,1),
+new Bulbs(468,763,2), new Bulbs(406,782,3), new Bulbs(538,784,2)};
+
+Star treetop = new Star(500,510);
 SnowCover gcolor = new SnowCover();
 Bulbs ltest;
 Tree test;
 int i;
-
 
 void setup()
 {
@@ -25,12 +28,14 @@ void draw()
   background(0);//reset the background to erase previous flake locations
   drawGround();
   test.drawTree();
+  treetop.drawStar();
   drawBulbs();;for(i = 0; i < storm.length; i++)//for every snowflake
   {
       fill(255);
       storm[i].moveSnow(); //move them downward         
       groundcolor(); //and if the y position is at the bottom of the screen, incrament the cover counter
    }
+  System.out.println(mouseX + "  " + mouseY);
 }
 
 /*//////////////////////////////////////////////////////

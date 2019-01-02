@@ -7,7 +7,6 @@ public class SnowCover{
   }
   public void moreSnow(int c){
     cover = cover + c;
-    System.out.println(cover);
   }
   public int getCover(){
     return cover;
