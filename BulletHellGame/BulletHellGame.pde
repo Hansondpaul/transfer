@@ -7,5 +7,14 @@ void setup(){
 
 void draw()
 {
+  background(0);
   red = new Grid();
+  main.drawChara();
+}
+public void keyPressed(){
+  if (key == 'w') main.y--;
+  if (key == 'a') main.x--;
+  if (key == 's') main.y++;
+  if (key == 'd') main.x++;
+  
 }

@@ -8,9 +8,15 @@ public class Chara
   {
     x=a; y=b;
   }
+  public void modCoords(int a, int b)
+  {
+    x=a; y=b;
+  }
   
   public void drawChara()
   {
-    
+    noFill();
+    stroke(#FF0000);
+    rect(x-20,y-20,40,40);
   }
 }
