@@ -16,7 +16,7 @@ public class Chara
   public void drawChara()
   {
     noFill();
-    stroke(#FF0000);
+    stroke(#00FFFF);
     rect(x-20,y-20,40,40);
   }
 }
