@@ -1,5 +1,6 @@
 public Grid red;
-Snow[] storm = new Snow[150];
+Snow[] storm = new Snow[100];
+Blaster gaster = new Blaster();
 public Chara main = new Chara(500,900);
 public boolean x1 = false;
 public boolean x2 = false;
@@ -7,7 +8,7 @@ public boolean y1 = false;
 public boolean y2 = false;
 public boolean stringed = true;
 public boolean stop = false;
-public int score = 0;
+public int score = 1000;
 
 void setup(){
   size(1000,1000);
@@ -25,10 +26,11 @@ void draw()
 {
   
   for(int i = 0; i < storm.length; i++){
-    if(Math.abs(main.x-storm[i].getX())<=12 && Math.abs(main.y-storm[i].getY())<=12){
+    if(Math.abs(main.x-storm[i].getX())<=15 && Math.abs(main.y-storm[i].getY())<=15){
       stop = true;}}
-      
+  
   if (stop == false){
+    
     background(0);
     red = new Grid();
     move();
@@ -40,9 +42,14 @@ void draw()
         storm[i].moveSnow();      
      }
    score+=1;
-     
+   if(score>= 1000){
+     gaster.blasterSetup();
+     gaster.blast();
+     gaster.blaster.drawFlake(40);
+   }
   }//if stop==false
   else{
+    move();
     textSize(50);
     text("Score =" + score, 10,60);
   }
@@ -53,7 +60,7 @@ public void keyPressed()
 {
   if (key == 'w')//if w is pressed
   {
-    if(stringed == true) main.y-=100;
+    if(stringed == true && main.y >100) main.y-=100;
     else {y1 = true; y2 = false;}
   }
   
@@ -61,7 +68,7 @@ public void keyPressed()
   
   if (key == 's')// if s is pressed
   {
-    if(stringed == true) main.y+=100;
+    if(stringed == true&&main.y<900) main.y+=100;
     else {y1 = false; y2 = true;}
   }
   
@@ -78,8 +85,8 @@ public void keyReleased()
 
 public void move()
 {
-  if(x1 == true) main.x-=5;
-  if(x2 == true) main.x+=5;
+  if(x1 == true && main.x>15) main.x-=5;
+  if(x2 == true && main.x<1000-15) main.x+=5;
   if(stringed == false&&y1 == true) main.y-=5;
   if(stringed == false&&y2 == true) main.y+=5;
 }

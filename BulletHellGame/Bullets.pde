@@ -1,5 +1,5 @@
 public class Snow{
-  Wind snow = new Wind((int)random(-2,2));
+  private Wind snow = new Wind((int)random(-2,2));
   private int x = 0;
   private int y = 0;
   private int alt = (int)random(900,1000);
@@ -8,7 +8,14 @@ public class Snow{
     x = a;
     y = b;
   }//constructor
+  public Snow(int a, int b, int c){
+    x = a; y = b; snow.speed = c;
+  }
   
+  public void setcoords(int a, int b){
+    x = a;
+    y = b;
+  }
   public int getX(){
     return x;}
     
@@ -38,5 +45,8 @@ public class Snow{
       snow.setSpeed((int)random(-2,2));
     }//if
   }//movesnow
+  public void slidesnow(){
+    x+=snow.getSpeed();
+  }
   
 }
