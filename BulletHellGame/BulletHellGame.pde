@@ -1,6 +1,7 @@
 public Grid red;
 Snow[] storm = new Snow[100];
-Blaster gaster = new Blaster();
+public int blast = (int)(random(1,9)*100);
+Snow blaster = new Snow(0,blast);
 public Chara main = new Chara(500,900);
 public boolean x1 = false;
 public boolean x2 = false;
@@ -9,6 +10,7 @@ public boolean y2 = false;
 public boolean stringed = true;
 public boolean stop = false;
 public int score = 1000;
+
 
 void setup(){
   size(1000,1000);
@@ -41,16 +43,22 @@ void draw()
         fill(255);
         storm[i].moveSnow();      
      }
+     
+     if(score >= 1000)
+     {
+       blast();      
+     }
+     
    score+=1;
-   if(score>= 1000){
-     gaster.blasterSetup();
-     gaster.blast();
-     gaster.blaster.drawFlake(40);
-   }
+   
   }//if stop==false
-  else{
+  
+  else
+  
+  {
     move();
     textSize(50);
+    fill(255);
     text("Score =" + score, 10,60);
   }
   
@@ -89,4 +97,16 @@ public void move()
   if(x2 == true && main.x<1000-15) main.x+=5;
   if(stringed == false&&y1 == true) main.y-=5;
   if(stringed == false&&y2 == true) main.y+=5;
+}
+
+public void blast(){
+  if (blaster.x <= 1000){
+    blaster.x += 10;
+    blaster.drawFlake(30);
+  }
+  else{
+    blast = (int)(random(1,9)*100);
+    blaster.x = 0;
+    blaster.y = blast; 
+  }
 }

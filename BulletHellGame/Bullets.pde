@@ -45,6 +45,7 @@ public class Snow{
       snow.setSpeed((int)random(-2,2));
     }//if
   }//movesnow
+  
   public void slidesnow(){
     x+=snow.getSpeed();
   }
