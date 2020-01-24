@@ -3,12 +3,12 @@ public static class StringParser {
   static Scanner subScan;
 
   public static int countWords(String s) {
-    String[] words = s.split("\\W+");
+    String[] words = s.split("[^A-Za-z0-9]");
     return words.length;
   }
 
   public static ArrayList<String> getWordList(String s) {
-    String[] words = s.split("\\W+");
+    String[] words = s.split("[^A-Za-z0-9]");
     ArrayList<String> result = new ArrayList<String>();
     for (int i = 0; i < words.length; i++) {
       result.add(words[i]);
@@ -17,7 +17,7 @@ public static class StringParser {
   }
 
   public static String[] getWords(String s) {
-    String[] words = s.split("\\W+");
+    String[] words = s.split("[^A-Za-z0-9]");
     return words;
   }
 
